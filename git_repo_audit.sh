@@ -1,3 +1,14 @@
+#!/usr/bin/env bash
+# git_repo_audit.sh
+# Audits one or more git repos for common issues: stale branches, large files,
+# missing .gitignore entries, untagged commits, and contributor activity.
+# Useful for QA/DevOps leads maintaining multiple project repos.
+#
+# Usage:
+#   ./git_repo_audit.sh [<repo_path>] [--stale-days <n>] [--report]
+#   ./git_repo_audit.sh .
+#   ./git_repo_audit.sh /path/to/project --stale-days 30 --report
+
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

@@ -1,3 +1,15 @@
+#!/usr/bin/env bash
+# log_analyzer.sh
+# Parses CI/CD pipeline or application logs and produces a structured summary.
+# Designed for QA/DevOps workflows — surfaces errors, warnings, test results,
+# and timing data from raw log files.
+#
+# Usage:
+#   ./log_analyzer.sh <logfile> [--tail <n>] [--errors-only] [--json]
+#   ./log_analyzer.sh logs/build.log
+#   ./log_analyzer.sh logs/test_run.log --errors-only
+#   ./log_analyzer.sh logs/deploy.log --json
+
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

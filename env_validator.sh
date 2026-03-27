@@ -1,3 +1,16 @@
+#!/usr/bin/env bash
+# env_validator.sh
+# Validates that the local development environment matches the expected tool
+# versions and configuration. Prevents "works on my machine" failures by
+# catching version drift early.
+#
+# Usage:
+#   ./env_validator.sh [--strict] [--fix-hints]
+#
+# Options:
+#   --strict      Exit with failure if any version is behind the expected minimum
+#   --fix-hints   Print install/upgrade commands for anything that fails
+
 set -euo pipefail
 
 STRICT=false
